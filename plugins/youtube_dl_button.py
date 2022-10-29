@@ -127,7 +127,7 @@ async def youtube_dl_call_back(bot, update):
     e_response = stderr.decode().strip()
     t_response = stdout.decode().strip()
 
-    ad_string_to_replace = "please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output."
+    ad_string_to_replace = "Please Report This Issue On https://yt-dl.org/bug . Make Sure You Are Using The Latest Version; See https://yt-dl.org/update On How To Update. Be Sure To Call YouTube-Dl With The verbose Flag And Include Its Complete Output."
     if e_response and ad_string_to_replace in e_response:
         error_message = e_response.replace(ad_string_to_replace, "")
         await bot.edit_message_text(
@@ -144,7 +144,7 @@ async def youtube_dl_call_back(bot, update):
                 download_directory = os.path.splitext(download_directory)[0] + "." + "mkv"
                 file_size = os.stat(download_directory).st_size
             except Exception:
-                await update.message.edit(text="File Not found 🤒")
+                await update.message.edit(text="File Not Found 🤒")
                 asyncio.create_task(clendir(tmp_directory_for_each_user))
                 return
         if file_size > Config.TG_MAX_FILE_SIZE:
@@ -213,7 +213,7 @@ async def youtube_dl_call_back(bot, update):
                 asyncio.create_task(clendir(download_directory))
                 asyncio.create_task(clendir(thumbnail))
                 await bot.edit_message_text(
-                text="Uploaded sucessfully ✓\n\nJOIN : @SPACE_X_BOTS",
+                text="Uploaded sucessfully ✓\n\nJoin : @Tech_Projects2019",
                 chat_id=update.message.chat.id,
                 message_id=update.message.message_id,
                 disable_web_page_preview=True)
